@@ -21,11 +21,11 @@ body {font-family: "Lato", sans-serif}
       <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-hide-small acitve">HOME</a>
         <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT US</a>
         <a href="#admissions" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADMISSIONS</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+        <a href="#login" class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="document.getElementById('login').style.display='block'">LOGIN</a>
         <div class="w3-dropdown-hover w3-hide-small">
           <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
           <div class="w3-dropdown-content w3-bar-block w3-card-4">
-            <a href="#login" class="w3-bar-item w3-button" onclick="document.getElementById('login').style.display='block'">LOGIN</a>
+            <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
             <a href="#news" class="w3-bar-item w3-button">TOPPERS LIST</a>
             <a href="#gallery" class="w3-bar-item w3-button">GALLERY</a>
           </div>
@@ -37,11 +37,11 @@ body {font-family: "Lato", sans-serif}
   <a href="#home" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a href="#about" class="w3-bar-item w3-button w3-padding-large">ABOUT US</a>
         <a href="#admissions" class="w3-bar-item w3-button w3-padding-large">ADMISSIONS</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large">CONTACT</a>
+        <a href="#login" class="w3-bar-item w3-button w3-padding-large" onclick="document.getElementById('login').style.display='block'">LOGIN</a>
         <div class="w3-dropdown-hover w3-hide-large">
           <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
           <div class="w3-dropdown-content w3-bar-block w3-card-4">
-            <a href="#login" class="w3-bar-item w3-button" onclick="document.getElementById('login').style.display='block'">LOGIN</a>
+            <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
             <a href="#news" class="w3-bar-item w3-button">TOPPERS LIST</a>
             <a href="#gallery" class="w3-bar-item w3-button">GALLERY</a>
           </div>
@@ -151,40 +151,44 @@ body {font-family: "Lato", sans-serif}
         <div class="w3-row w3-section">
           <div class="w3-col" style="width:50px"><i class="w3-xlarge fa fa-user"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="first" type="text" placeholder="First Name">
+              <input class="w3-input w3-border" name="first name" type="text" placeholder="First Name" id="first name">
             </div>
         </div>
         
         <div class="w3-row w3-section">
           <div class="w3-col" style="width:50px"><i class="w3-xlarge fa fa-user"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="last" type="text" placeholder="Last Name">
+              <input class="w3-input w3-border" name="last name" type="text" placeholder="Last Name" id="last name">
             </div>
         </div>
         
         <div class="w3-row w3-section">
           <div class="w3-col" style="width:50px"><i class="w3-xlarge fa fa-envelope-o"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="email" type="text" placeholder="Email">
+              <input class="w3-input w3-border" name="email" type="text" placeholder="Email" id="email">
             </div>
         </div>
         
         <div class="w3-row w3-section">
           <div class="w3-col" style="width:50px"><i class="w3-xlarge fa fa-phone"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="phone" type="text" placeholder="Phone">
+              <input class="w3-input w3-border" name="phone" type="text" placeholder="Phone" id="phone">
             </div>
         </div>
         
         <div class="w3-row w3-section">
           <div class="w3-col" style="width:50px"><i class="w3-xlarge fa fa-pencil"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="message" type="text" placeholder="Message">
+              <input class="w3-input w3-border" name="message" type="text" placeholder="Message" id="message">
             </div>
         </div>
         
         <p class="w3-center">
-        <button class="w3-button w3-section w3-black w3-ripple"> Send </button>
+        <button class="w3-button w3-section w3-black w3-ripple" onclick="message1()"> Submit </button>
+        <div class="message1">
+          <div class="success1" id="success1">Your Message Successfuly Sent!</div>
+          <div class="danger1" id="danger1">Fields Can't Be Empty!</div>
+        </div>
         </p>
       </div>
       <h2 class="w3-wide w3-center" id="admin"> Admission Procedure</h2>
@@ -311,11 +315,15 @@ body {font-family: "Lato", sans-serif}
             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name" id="name">
           </div>
           <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email" id="email">
+            <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email" id="email">
           </div>
         </div>
         <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message" id="msg">
-        <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+        <button class="w3-button w3-black w3-section w3-right" type="submit" onclick="message()">SEND</button>
+        <div class="message">
+          <div class="success" id="success">Your Message Successfuly Sent!</div>
+          <div class="danger" id="danger">Fields Can't Be Empty!</div>
+        </div>
         
     </div>
   </div>
@@ -324,12 +332,11 @@ body {font-family: "Lato", sans-serif}
 </div>
 <img src="last2.png" class="w3-image w3-greyscale" style="width:100%;height:10%">
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <a href="https://www.facebook.com/"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+  <a href='https://www.instagram.com/'><i class="fa fa-instagram w3-hover-opacity"></i></a>
+  <a href="https://www.snapchat.com/"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+  <a href="https://in.pinterest.com/"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+  <a href="https://twitter.com/"><i class="fa fa-twitter w3-hover-opacity"></i></a>
 </footer>
 
 <script>
@@ -384,7 +391,62 @@ function myFunction() {
     x.previousElementSibling.className.replace("w3-gray", "w3-white");
   }
 }
+function message(){
+  var Name=document.getElementById('name');
+  var email=document.getElementById('email');
+  var msg=document.getElementById('msg');
+  const success=document.getElementById('success');
+  const danger=document.getElementById('danger');
 
+  if (name.value ==='' ||email.value===''|| msg.value==='' ){
+    danger.style.display = 'block';
+    }
+  else{
+    setTimeout(() =>{
+      Name.value=''
+      email.value=''
+      msg.value=''
+    }, 2000);
+    success.style.display='block';
+  }
+
+
+
+  setTimeout(() =>{
+    danger.style.display='none';
+    success.style.display='none';
+  },3000)
+}
+function message1(){
+  var FName=document.getElementById('first name');
+  var LName=document.getElementById('last name');
+  var email=document.getElementById('email');
+  var phone=document.getElementById('phone');
+  var message=document.getElementById('message');
+  const success=document.getElementById('success');
+  const danger=document.getElementById('danger');
+
+  if (FName.value ===''|| LName.value==='' ||email.value===''|| phone.value===''|| message.value===''){
+    danger1.style.display = 'block';
+    }
+  else{
+    setTimeout(() =>{
+      FName.value=''
+      LName.value=''
+      email.value=''
+      phone.value=''
+      message.value=''
+    }, 2000);
+    success1.style.display='block';
+  }
+
+
+
+  setTimeout(() =>{
+    danger1.style.display='none';
+    success1.style.display='none';
+  },3000)
+}
 </script>
 </body>
 </html>
